@@ -1,0 +1,18 @@
+﻿{
+  "bindings": [
+    {
+      "name": "name",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "dbList",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "plans",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT * FROM c WHERE c.id={name}"
+    }
+  ]
+}

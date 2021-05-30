@@ -1,0 +1,28 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "id/{id}",
+      "authLevel": "function",
+      "methods": [
+        "get"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "dbHousehold",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "houseHolds",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT * FROM c WHERE c.id={id}"
+    }
+  ]
+}

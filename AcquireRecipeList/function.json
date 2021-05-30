@@ -1,0 +1,24 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "profile/{input}",
+      "authLevel": "function",
+      "methods": [
+        "get"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "starter",
+      "type": "orchestrationClient",
+      "direction": "in"
+    }
+  ]
+}

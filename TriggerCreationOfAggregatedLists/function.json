@@ -1,0 +1,26 @@
+﻿{
+  "bindings": [
+    {
+      "name": "inputDocument",
+      "databaseName": "foodplannerdb",
+      "collectionName": "aggregatedHouseholds",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "direction": "in",
+      "type": "cosmosDB"
+    },
+    {
+      "name": "outputDocument",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "aggregatedHouseholds",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB"
+    },
+    {
+      "name": "myTimer",
+      "schedule": "0 */5 * * * *",
+      "direction": "in",
+      "type": "timerTrigger"
+    }
+  ]
+}

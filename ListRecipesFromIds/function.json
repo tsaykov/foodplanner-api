@@ -1,0 +1,18 @@
+﻿{
+  "bindings": [
+    {
+      "name": "IDs",
+      "direction": "in",
+      "type": "activityTrigger"
+    },
+    {
+      "name": "dbRecipe",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "recipes",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT c.id, c.ingredients, c.title, c.author, c.imageName, c.tags, c.complexity, c.cookingTime, c._ts FROM c"
+    }
+  ]
+}

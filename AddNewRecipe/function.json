@@ -1,0 +1,33 @@
+{
+  "bindings": [
+    {
+      "name": "req",
+      "authLevel": "function",
+      "methods": [
+        "post"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "collection",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "recipes",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB"
+    },
+    {
+      "name": "outputBlob",
+      "direction": "inout",
+      "type": "blob",
+      "path": "images/{rand-guid}",
+      "connection": "foodplannerweb_STORAGE"
+    }
+  ]
+}

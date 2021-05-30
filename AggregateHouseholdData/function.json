@@ -1,0 +1,23 @@
+﻿{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "input",
+      "direction": "in",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "houseHolds",
+      "leaseCollectionName": "leases",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "name": "dbAggregated",
+      "databaseName": "foodplannerdb",
+      "collectionName": "aggregatedHouseholds",
+      "createIfNotExists": true,
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "direction": "out",
+      "type": "cosmosDB"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "bindings": [
+    {
+      "name": "allComments",
+      "databaseName": "foodplannerdb",
+      "collectionName": "comments",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT c.id, c.rating FROM c WHERE c.recipeId={queueTrigger}",
+      "direction": "in",
+      "type": "cosmosDB"
+    },
+    {
+      "name": "summaryDb",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "aggregatedComments",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB"
+    },
+    {
+      "name": "queueItem",
+      "queueName": "commentssums",
+      "connection": "foodplannerqueue_STORAGE",
+      "direction": "in",
+      "type": "queueTrigger"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "recipe/{id}",
+      "authLevel": "anonymous",
+      "methods": [
+        "get"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "dbRecipe",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "recipes",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT * FROM c WHERE c.id={id}"
+    }
+  ]
+}

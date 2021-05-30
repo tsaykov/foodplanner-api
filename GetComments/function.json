@@ -1,0 +1,28 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "comments/{recipeId}",
+      "authLevel": "anonymous",
+      "methods": [
+        "get"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "dbComment",
+      "databaseName": "foodplannerdb",
+      "collectionName": "comments",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT * FROM c WHERE c.recipeId={recipeId}",
+      "direction": "in",
+      "type": "cosmosDB"
+    }
+  ]
+}

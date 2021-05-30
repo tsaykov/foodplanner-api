@@ -1,0 +1,18 @@
+﻿{
+  "bindings": [
+    {
+      "name": "name",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "dbList",
+      "databaseName": "foodplannerdb",
+      "collectionName": "prestagedRecipeLists",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB",
+      "sqlQuery": "SELECT * FROM c WHERE c.id={name}",
+      "direction": "in",
+      "type": "cosmosDB"
+    }
+  ]
+}

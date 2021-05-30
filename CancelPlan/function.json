@@ -1,0 +1,26 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "authLevel": "function",
+      "methods": [
+        "post"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "dbPlan",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "foodplannerdb",
+      "collectionName": "plans",
+      "connectionStringSetting": "foodplannerdb_DOCUMENTDB"
+    }
+  ]
+}
